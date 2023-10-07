@@ -1,5 +1,4 @@
-import React from "react";
-
+import styles from "./favoritePokemon.module.scss";
 export const FavoritePokemon = () => {
-  return <div>favoritePokemon</div>;
+  return <div className={styles.container}>favoritePokemon</div>;
 };
