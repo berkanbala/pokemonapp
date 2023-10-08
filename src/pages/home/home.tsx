@@ -11,7 +11,7 @@ export const Home = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         {pokemons?.map((pokemon: any) => (
-          <Pokemon key={pokemon} pokemon={pokemon} />
+          <Pokemon key={pokemon.url} pokemon={pokemon} />
         ))}
       </div>
     </div>

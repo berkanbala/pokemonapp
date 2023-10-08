@@ -1,4 +1,4 @@
-import { useGetPokemonsDetails } from "../../../common/hooks/useGetPokemonDetails";
+import { useGetPokemonDetails } from "../../../common/hooks/useGetPokemonDetails";
 import styles from "./pokemon.module.scss";
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,7 @@ export const Pokemon = (props: Props) => {
   const { pokemon } = props;
 
   const { pokemonDetails, pokemonDetailsError, pokemonDetailsLoading } =
-    useGetPokemonsDetails(pokemon.name);
+    useGetPokemonDetails(pokemon.name);
 
   const getPokemonDetail = () => {};
 
@@ -18,14 +18,14 @@ export const Pokemon = (props: Props) => {
         <div className={styles.image}>
           <img
             alt=""
-            src={pokemonDetails.sprites.other.dream_world.front_default}
+            src={pokemonDetails?.sprites?.other?.dream_world?.front_default}
             width={250}
             height={250}
           />
         </div>
         <div className={styles.info}>
           <div className={styles.title}>
-            <span className={styles.pokemonName}>{pokemon.name} </span>
+            <span className={styles.pokemonName}>{pokemon?.name} </span>
           </div>
         </div>
       </Link>

@@ -1,0 +1,58 @@
+.toggleThemeWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    color: var(--link-color);
+  }
+
+  span {
+    font-size: 20px;
+    height: 30px;
+  }
+
+  .toggleTheme {
+    position: relative;
+    display: block;
+    height: 23px;
+    width: 50px;
+
+    input {
+      display: none;
+    }
+
+    input:checked + .sliderRound:before {
+      transform: translateX(26px);
+    }
+
+    input:checked + .sliderRound {
+      background-color: cornflowerblue;
+    }
+
+    .sliderRound {
+      background-color: #ccc;
+      position: absolute;
+      cursor: pointer;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      transition: 0.2s;
+      border-radius: 20px;
+
+      &:before {
+        background-color: #fff;
+        bottom: 4px;
+        top: 3px;
+        content: "";
+        height: 16px;
+        left: 4px;
+        position: absolute;
+        transition: 0.4s;
+        width: 17px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

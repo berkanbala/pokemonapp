@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { apiClient } from "../clients/appClients";
 
-export const useGetPokemonsDetails = (endpoint: string) => {
+export const useGetPokemonDetails = (endpoint: string) => {
   const pokemonApiClient = apiClient({});
 
   const fetcher = (url: string) =>
