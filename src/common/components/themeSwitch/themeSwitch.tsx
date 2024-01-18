@@ -1,4 +1,4 @@
-import { useThemeContext } from "../../../context/themeContext";
+import { useThemeContext } from "../../context/themeContext";
 import styles from "./themeSwitch.module.scss";
 export const ThemeSwitch = () => {
   const { changeAppTheme } = useThemeContext();

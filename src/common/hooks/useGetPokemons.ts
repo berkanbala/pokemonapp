@@ -5,13 +5,13 @@ export const useGetPokemons = () => {
   const pokemonApiClient = apiClient();
 
   const fetcher = (url: string) =>
-    pokemonApiClient.get(url).then((response) => response.data);
+    pokemonApiClient.get(url).then((res) => res.data);
   const shouldFetch = !!pokemonApiClient;
 
   const url = shouldFetch ? "/" : null;
 
   const { data, error, isValidating } = useSWR(url, fetcher, {
-    revalidateIfState: false,
+    revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });

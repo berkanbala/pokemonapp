@@ -1,20 +1,31 @@
 import { useParams } from "react-router-dom";
 import styles from "./pokemonDetails.module.scss";
 import { useGetPokemonDetails } from "../../common/hooks/useGetPokemonDetails";
+import { Loading } from "../../common/components/loading/loading";
+import { NotFound } from "../notFound/notFound";
+// import { useEffect } from "react";
+
 export const PokemonDetails = () => {
   const { id } = useParams();
 
   const { pokemonDetails, pokemonDetailsError, pokemonDetailsLoading } =
     useGetPokemonDetails(id || "pikachu");
+  // useEffect(() => {
 
-  if (pokemonDetailsLoading) return <div>loading...</div>;
-  if (pokemonDetailsError) return <div>error</div>;
+  // }, [id]);
+
+  // if (pokemonDetailsLoading) return <div>loading</div>;
+  if (pokemonDetailsLoading) return <Loading />;
+  // if (pokemonDetailsError) return <div>error</div>;
+  if (pokemonDetailsError) return <NotFound />;
+
   return (
     <div className={styles.container}>
       <img
-        alt=""
         className={styles.image}
+        alt=""
         src={pokemonDetails?.sprites.other.dream_world.front_default}
+        //sprites other": "dream_world": "front_default"
       />
       <div className={styles.content}>
         {pokemonDetails?.forms.map((form: any, index: number) => (
