@@ -1,21 +1,31 @@
+import { useEffect, useState } from "react";
 import { Loading } from "../../common/components/loading/loading";
-import { useGetPokemons } from "../../common/hooks/useGetPokemons";
 import { Pokemon } from "../../custom/components/pokemon/pokemon";
-// import { NotFound } from "../notFound/notFound";
+import { IPokemon } from "../../common/models/pokomen";
 import styles from "./home.module.scss";
 export const Home = () => {
-  const { pokemons, pokemonsError, pokemonsLoading } = useGetPokemons();
+  const [pokemons, setPokemons] = useState<IPokemon[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // if (pokemonsLoading) return <div>loading...</div>;
-  if (pokemonsLoading) return <Loading />;
-  if (pokemonsError) return <div>failed to load</div>;
-  // if (pokemonsError) return <NotFound />;
+  useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPokemons(data.results);
+      })
+      .catch((error) => console.warn(error))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        {pokemons?.map((pokemon: any) => (
-          <Pokemon key={pokemon.url} pokemon={pokemon} />
+        {pokemons?.map((pokemon: IPokemon, index: any) => (
+          <Pokemon key={index} name={pokemon.name} />
         ))}
       </div>
     </div>

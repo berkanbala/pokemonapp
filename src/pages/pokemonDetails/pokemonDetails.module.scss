@@ -4,7 +4,7 @@
 
 .container {
   width: 350px;
-  height: 530px;
+  height: 433px;
   color: #454545;
   display: grid;
   overflow: hidden;
@@ -17,7 +17,6 @@
   transform: translate(-50%, -50%);
   border-radius: 12px;
   border: 2px solid #bfaeb0;
-  // box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
 
   @extend %boxshadow;
 
@@ -56,13 +55,6 @@
       text-decoration: none;
 
       span {
-        // &:first-child {
-        //   color: blueviolet;
-        // }
-
-        // &:last-child {
-        //   color: #ea0a0aa0;
-        // }
       }
     }
   }
