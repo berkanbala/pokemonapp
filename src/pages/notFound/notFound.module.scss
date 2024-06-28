@@ -1,5 +1,7 @@
+@import "../../common/assets/styles/globals.scss";
+
 %boxshadow {
-  box-shadow: 4px 4px 9.6px #a09999, 0 8px 18px #000000;
+  box-shadow: 4px 4px 9.6px $grey, 0 8px 18px $black;
 }
 
 .container {
@@ -9,7 +11,7 @@
     sans-serif;
   transition: font-size 0.2s;
   background-size: contain;
-  background-color: #fff;
+  background-color: $white;
   height: 565px;
   flex-direction: row;
   justify-content: center;

@@ -1,5 +1,7 @@
+@import "../../../assets/styles/globals.scss";
+
 .container {
-  background-color: #3d414e;
+  background-color: $grey4;
   user-select: none;
   display: flex;
   align-items: center;

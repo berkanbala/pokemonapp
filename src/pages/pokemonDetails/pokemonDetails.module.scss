@@ -1,22 +1,24 @@
+@import "../../common/assets/styles/globals.scss";
+
 %boxshadow {
-  box-shadow: 4px 4px 9.6px #a09999, 0 8px 18px #000000;
+  box-shadow: 4px 4px 9.6px $grey, 0 8px 18px $black;
 }
 
 .container {
   width: 350px;
   height: 433px;
-  color: #454545;
+  color: $grey1;
   display: grid;
   overflow: hidden;
   align-items: center;
   justify-items: center;
-  background-color: aliceblue;
+  background-color: $white;
   position: absolute;
   top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  border: 2px solid #bfaeb0;
+  border: 2px solid $grey2;
 
   @extend %boxshadow;
 
@@ -37,8 +39,8 @@
 
     .title {
       font-size: 18px;
-      background: linear-gradient(to right, #aee077, #bef3ec);
-      color: #000000;
+      background: linear-gradient(to right, $green3, $blue);
+      color: $black;
       padding: 20px;
       border-radius: 6px 0 6px 0;
       display: flex;

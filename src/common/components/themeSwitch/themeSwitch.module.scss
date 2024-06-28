@@ -1,3 +1,5 @@
+@import "../../assets/styles/globals.scss";
+
 .toggleThemeWrapper {
   display: flex;
   flex-direction: row;
@@ -27,11 +29,11 @@
     }
 
     input:checked + .sliderRound {
-      background-color: cornflowerblue;
+      background-color: $blue2;
     }
 
     .sliderRound {
-      background-color: #ccc;
+      background-color: $white1;
       position: absolute;
       cursor: pointer;
       bottom: 0;
@@ -42,7 +44,7 @@
       border-radius: 20px;
 
       &:before {
-        background-color: #fff;
+        background-color: $white;
         bottom: 4px;
         top: 3px;
         content: "";

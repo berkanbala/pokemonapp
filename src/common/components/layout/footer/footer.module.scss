@@ -1,7 +1,9 @@
+@import "../../../assets/styles/globals.scss";
+
 .container {
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 10px;
-  background-color: #3d414e;
+  background-color: $grey4;
 }

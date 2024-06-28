@@ -1,3 +1,5 @@
+@import "./common/assets/styles/globals.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +15,11 @@
 }
 
 .defaultTheme {
-  background-color: #4fea9a4a;
-  color: #16cd09 !important;
+  background-color: $green1;
+  color: $green !important;
 }
 
 .darkTheme {
-  background-color: #e6eea99a;
-  color: #ffbb00 !important;
+  background-color: $green2;
+  color: $orange !important;
 }
